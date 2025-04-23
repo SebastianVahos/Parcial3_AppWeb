@@ -68,7 +68,7 @@ namespace Parcial3.Clases
             return dbexamen.Torneos.FirstOrDefault(e => e.NombreTorneo == NombreTorneo);
         }
 
-        public Torneo ConsultarPorFecha(date FechaTorneo)
+        public Torneo ConsultarPorFecha(DateTime FechaTorneo)
         {
             return dbexamen.Torneos.FirstOrDefault(e => e.FechaTorneo == FechaTorneo);
         }
