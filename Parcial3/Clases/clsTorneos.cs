@@ -11,14 +11,14 @@ namespace Parcial3.Clases
     public class clsTorneos
     {
         private DBExamenEntities dbexamen = new DBExamenEntities();
-        public Torneo torneo { get; set; }
+        public Torneo torneos { get; set; }
 
         public string Insertar()
         {
             try
             {
-                dbexamen.Torneos.Add(torneo);
-                dbSuper.SaveChanges();//guardar los cambios en la bd 
+                dbexamen.Torneos.Add(torneos);
+                dbexamen.SaveChanges();//guardar los cambios en la bd 
                 return "Torneo insertado correctamente";
             }
             catch (Exception ex)
@@ -31,7 +31,7 @@ namespace Parcial3.Clases
         {
             try
             {
-                Torneo torneo = ConsultarPorId(torneo.idTorneos);
+                Torneo torneo = ConsultarPorId(torneos.idTorneos);
                 if (torneo == null)
                 {
                     return "El torneo con el id ingresado no existe, no se puede actualizar";
@@ -83,7 +83,7 @@ namespace Parcial3.Clases
                     return "El torneo con el id ingresado no existe, por lo tanto no se puede eliminar";
                 }
                 dbexamen.Torneos.Remove(torneo);
-                dbSuper.SaveChanges();
+                dbexamen.SaveChanges();
                 return "Se eliminó el torneo correctamente";
             }
             catch (Exception ex)
