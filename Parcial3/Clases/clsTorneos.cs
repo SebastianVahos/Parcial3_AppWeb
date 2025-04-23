@@ -37,7 +37,7 @@ namespace Parcial3.Clases
                     return "El torneo con el id ingresado no existe, no se puede actualizar";
                 }
                 //El empleado existe lo podemos actualizar
-                dbexamen.Torneos.AddOrUpdate(torneo);
+                dbexamen.Torneos.AddOrUpdate(torneos);
                 dbexamen.SaveChanges();//guardar los cambios en la bd
                 return "Se actualizó el torneo correctamente";
             }
